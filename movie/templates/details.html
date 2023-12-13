@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <br>
+            <img src="{{mt.img.url}}" width="50%" height="400"><br><br>
+        </div>
+        <div class="col-md-6">
+            <br>
+            <h4>{{mt.name}}</h4>
+            {{mt.desc}}<br><br>
+            {{mt.year}}<br><br>
+            <a class="btn btn-warning" href="{% url 'mvapp:update' mt.id %}">update</a>
+            <a class="btn btn-danger" href="{% url 'mvapp:delete' mt.id %}">Delete</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

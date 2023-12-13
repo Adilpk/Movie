@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br>
+<div class="container">
+  <H1>2019 cinemas</H1>
+  <p>
+  2019 has been rather a weak year for Malayalam cinema. We had some terrible films come out this year, some of which
+    were discussed and bludgeoned to death on Reddit. But there is no denying that we also had some
+    fabulous poster designs that promoted these very films – both good and bad – through their various,
+    often unnecessary, stages of publicity.<br>
+    if you need to add Movie<br>
+    <a class="btn btn-warning" href="{% url 'mvapp:add_movie' %}">Add Movie</a>
+</p>
+</div>
+<div class="container">
+  <div class="row">
+      {% for i in movies %}
+    <div class="col-3">
+      <img src="{{i.img.url}}" width="260" height="450"><br><br>
+      <a href="movie/{{i.id}}">{{i.name}}</a><br>
+    </div>
+      {% endfor %}
+  </div>
+</div>
+
+
+{% endblock %}
